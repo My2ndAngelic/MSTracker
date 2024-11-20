@@ -1,0 +1,28 @@
+JSON example:
+
+char
+    ign
+    class
+    level
+    arcane: 1, 2, 3, 4, 5, 6
+    sacred: 1, 2, 3, 4, 5, 6
+
+{
+    "server": [
+        {
+            "name":"Aurora",
+            "char": [
+                {
+                    "ign": "My2ndAngelic",
+                    "class": "Angelic Buster",
+                    "level": "260"
+                },
+                {
+                    "ign": "My2ndAngelic",
+                    "class": "Angelic Buster",
+                    "level": "251"
+                }
+            ]
+        }
+    ]
+}
