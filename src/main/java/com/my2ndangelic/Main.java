@@ -6,6 +6,8 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -21,23 +23,24 @@ public class Main {
             throw new RuntimeException(e);
         }
 
-        Yaml yaml = new Yaml();
         List<Mapler> maplers = new ArrayList<>();
 
-        for (Object characterData : yaml.loadAll(importedData)) {
+        for (Object characterData : new Yaml().loadAll(importedData)) {
             Mapler mapler = new Mapler();
-            System.out.println(characterData.getClass()                   );
-//            mapler.setIgn((String) map.get("ign"));
-//            mapler.setJob((String) map.get("job"));
-//            mapler.setLevel((Integer) map.get("level"));
-//            mapler.setArcane((List<Integer>) map.get("arcane"));
-//            mapler.setSacred((List<Integer>) map.get("sacred"));
-//            maplers.add(mapler);
+            LinkedHashMap<String, Object> leMap = (LinkedHashMap<String, Object>) characterData;
+            mapler.setIgn((String) leMap.get("ign"));
+            mapler.setJob((String) leMap.get("job"));
+            mapler.setLevel((Integer) leMap.get("level"));
+            if (leMap.get("arcane") != null)
+                mapler.setArcane(Arrays.stream(leMap.get("arcane").toString().split(",")).map(String::trim).map(Integer::parseInt).collect(Collectors.toList()));
+            if (leMap.get("sacred") != null)
+                mapler.setSacred(Arrays.stream(leMap.get("sacred").toString().split(",")).map(String::trim).map(Integer::parseInt).collect(Collectors.toList()));
+            maplers.add(mapler);
         }
 
         // Now you have a list of Mapler objects
         for (Mapler mapler : maplers) {
-            System.out.println(mapler); // Or use them as needed
+            System.out.println(mapler.getIgn()); // Or use them as needed
         }
 
     }
