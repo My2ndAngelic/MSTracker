@@ -1,11 +1,19 @@
 JSON example:
 
-char
-    ign
-    class
-    level
+char: My2ndAngelic
+    class: Angelic Buster
+    level: 260
     arcane: 1, 2, 3, 4, 5, 6
     sacred: 1, 2, 3, 4, 5, 6
+char: My2ndWA
+    class: Wind Archer
+    level: 250
+    arcane: 1, 2, 3, 4, 5, 6
+char: My2ndShade
+    class: Shade
+    level: 221
+    arcane: 1, 2, 3
+
 
 {
     "server": [

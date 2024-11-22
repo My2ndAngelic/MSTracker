@@ -3,19 +3,25 @@ package com.my2ndangelic;
 import lombok.Getter;
 import lombok.Setter;
 
-public class Character {
-    @Getter @Setter private String IGN;
+import java.util.List;
+
+public class Mapler {
+    @Getter @Setter private String ign;
     @Getter @Setter private String job;
     @Getter @Setter private int level;
     @Getter private String faction;
     @Getter private String archetype;
+    @Getter @Setter private List<Integer> arcane;
+    @Getter @Setter private List<Integer> sacred;
 
-    Character() {
+
+
+    Mapler() {
 
     }
 
-    Character(String IGN, String job, int level) {
-        this.IGN = IGN;
+    Mapler(String ign, String job, int level) {
+        this.ign = ign;
         this.job = job;
         this.level = level;
         setFaction(job);

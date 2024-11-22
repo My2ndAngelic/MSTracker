@@ -1,0 +1,19 @@
+{
+  "server": [
+    {
+      "name":"Aurora",
+      "char": [
+        {
+          "ign": "My2ndAngelic",
+          "job": "Angelic Buster",
+          "level": "260"
+        },
+        {
+          "ign": "My2ndAngelic",
+          "job": "Angelic Buster",
+          "level": "251"
+        }
+      ]
+    }
+  ]
+}
