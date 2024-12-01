@@ -30,7 +30,7 @@ public class CSVJobLookup {
     }
 
     /***
-     * Return the faction (
+     * Return the faction (with a job)
      * @param job
      * @return
      */

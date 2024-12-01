@@ -1,24 +1,20 @@
 package com.my2ndangelic;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.List;
 
+@Getter @NoArgsConstructor
 public class Mapler {
-    @Getter @Setter private String ign;
-    @Getter @Setter private String job;
-    @Getter @Setter private int level;
-    @Getter private String faction;
-    @Getter private String archetype;
-    @Getter @Setter private List<Integer> arcane;
-    @Getter @Setter private List<Integer> sacred;
-
-
-
-    Mapler() {
-
-    }
+    @Setter private String ign;
+    @Setter private String job;
+    @Setter private int level;
+    private String faction;
+    private String archetype;
+    @Setter private List<Integer> arcane;
+    @Setter private List<Integer> sacred;
 
     Mapler(String ign, String job, int level) {
         this.ign = ign;
@@ -41,7 +37,7 @@ public class Mapler {
     // TODO: Set the Archetype based on classname, from database
     private void setArchetype(String job) {
         switch (job) {
-            case "Aran", "Evan": {
+            case "Aran", "Adele": {
                 archetype = "Warrior";
             }
             default:
